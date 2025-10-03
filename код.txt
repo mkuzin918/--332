@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Business {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите название бизнеса: ");
+        String businessName = scanner.nextLine();
+
+        System.out.print("Введите цену товара: ");
+        double productPrice = scanner.nextDouble();
+
+        System.out.print("Введите количество проданных товаров: ");
+        int productQuantity = scanner.nextInt();
+
+        System.out.print("Введите расходы бизнеса: ");
+        double businessExpenses = scanner.nextDouble();
+
+        double revenue = productPrice * productQuantity;
+        double profit = revenue - businessExpenses;
+
+        System.out.println("\nБизнес: " + businessName);
+        System.out.println("Выручка: " + revenue);
+        System.out.println("Прибыль: " + profit);
+
+        if (profit > 0) {
+            System.out.println("Бизнес приносит прибыль!");
+        } else if (profit == 0) {
+            System.out.println("Бизнес работает в ноль.");
+        } else {
+            System.out.println("Бизнес убыточен!");
+        }
+
+        scanner.close();
+    }
+}
